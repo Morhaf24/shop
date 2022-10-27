@@ -5,5 +5,5 @@
 	$db_hostname = "localhost";
 	$db_username = "root";
 	$db_password = "";
-	$db_database = "uek295";
+	$db_database = "shop";
 ?>
