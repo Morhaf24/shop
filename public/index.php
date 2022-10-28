@@ -14,6 +14,9 @@
 
     $app = AppFactory::create();
 
+    /**
+         * @OA\Info(title="Shop", version="0.1")
+     */
 	require "controller/routes_category.php";
 	require "controller/routes_product.php";
     

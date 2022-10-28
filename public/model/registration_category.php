@@ -22,6 +22,30 @@
             return $category;
     }
 
+    function get_all_category() {
+        global $database;
+
+        $result = $database->query("SELECT * FROM `category`");
+
+        if (!$result) {
+            error("Fetching the Category faild.", 500);
+
+        }
+
+        else if ($result === true || $result->num_rows == 0) {
+            return array();
+
+        }
+
+        $all_category = array();
+        while ($category = $result->fetch_assoc()) {
+            $all_category[] = $category;
+
+        }
+
+        return $all_category;
+    }
+
     function create_new_category($active, $name) {
         global $database;
 
@@ -57,7 +81,7 @@
         }
         
         else {
-            error("The category was succsessfuly deleted.", 200);
+            error("The data was deleted.", 200);
         }
 
         return true;
